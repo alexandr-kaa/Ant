@@ -35,6 +35,16 @@ namespace AntJourney {
 				m_externalSet.insert(pos);
 			}
 		}
+// More control for data type overflow		
+//		for (const Position& pos : std::list<Position>{ {x < std::numeric_limits<uint64_t>::max() ? x + 1 : std::numeric_limits<uint64_t>::max(),y},
+//			{x > 0 ? x - 1 : 0,y},
+//			{x,y < std::numeric_limits<uint64_t>::max() ? y + 1 : std::numeric_limits<uint64_t>::max()},
+//			{x,y > 0 ? y - 1 : 0} }) {
+//			if (CanMove(pos)) {
+//				res.emplace_back(std::make_unique<Ant>(pos, m_externalSet));
+//				m_externalSet.insert(pos);
+//			}
+//		}
 		return res;
 	}
 }
